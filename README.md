@@ -87,7 +87,9 @@ Una vez que vende lo que tiene para vender, obviamente, deja de tenerlo.
 ## Bonus
 
 ### Aspersores
-Al presionar la tecla A, hacer que Héctor deje un aspersor donde se encuentra. El aspersor (imagen `aspersor.png`) tiene la capacidad de regar las plantas que tiene alrededor, o sea en las posiciones limítrofes a donde se encuentra el aspersor, _automáticamente cada 1 segundo_.
+Al presionar la tecla A, hacer que Héctor deje un aspersor donde se encuentra. El aspersor (imagen `aspersor.png`) 
+
+tiene la capacidad de regar las plantas que tiene alrededor, o sea en las posiciones limítrofes a donde se encuentra el aspersor, _automáticamente cada 1 segundo_.
 
 **Nota**  
 Pensar en los objetos que _podrían_ ser regados por el aspersor: ¿Qué pasa si Héctor se queda parado al lado? ¿Y si hay otro aspersor? 
