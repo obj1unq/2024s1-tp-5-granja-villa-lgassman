@@ -20,6 +20,7 @@ class Maiz {
 	method precio() {
 		return 150
 	}
+		
 }
 
 object baby {
@@ -56,6 +57,7 @@ class Trigo {
 		return (etapa -1 ) * 100
 	}
 	
+	
 }
 
 class Tomaco {
@@ -80,6 +82,8 @@ class Tomaco {
 	method precio() {
 		return 80
 	}
+
+	
 	
 }
 

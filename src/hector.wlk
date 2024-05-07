@@ -1,18 +1,40 @@
 import wollok.game.*
 import cultivos.*
+import aspersores.*
+import mercados.*
+
+object granja {
+	
+	const property sembrados = #{}
+	
+	method agregarCultivo(cultivo) {
+		sembrados.add(cultivo)
+	} 
+	
+	method sembrados(position) {
+		return sembrados.filter({cultivo => cultivo.position() == position})
+	}
+}
 
 object hector {
 	var property position = game.center()
 	const property image = "player.png"
 	var property cosechados = #{}
 	var oro = 0
+	var property plantacion = granja
+	var property comprador = mercados
 	
 	method descripcion() {
 		return "tengo $" + oro + " y " + cosechados.size() + " plantas"
 	}
 	
+	method agregarAspersor() {
+		aspersores.crear(position, plantacion)
+	}
+	
 	method sembrar(cultivo) {
 		cultivo.position(position)
+		plantacion.agregarCultivo(cultivo)
 		game.addVisual(cultivo)
 	}
 	
@@ -38,7 +60,7 @@ object hector {
 	}
 	
 	method cultivos() {
-		const cultivos = game.colliders(self)
+		const cultivos = plantacion.sembrados(position)
 		if (cultivos.isEmpty()) {
 			self.error("No hay cultivos acá")
 		}
@@ -53,6 +75,7 @@ object hector {
 	
 	method vender() {
 		self.validarVender()
+		comprador.comprar(self)
 		oro += self.precioCosecha()
 		cosechados.clear()
 	}
